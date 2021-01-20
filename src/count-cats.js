@@ -1,6 +1,12 @@
-const CustomError = require("../extensions/custom-error");
-
-module.exports = function countCats(/* matrix */) {
-  throw new CustomError('Not implemented');
-  // remove line with error and write your code here
-};
+module.exports = function countCats(matrix) {
+  /* throw 'Not implemented';*/
+   if (!arguments.length) return [];
+ 
+   let cats = 0;
+   let arr = [];
+   matrix.forEach((x, i) => {Array.prototype.push.apply(arr, x)});
+   for (let j = 0; j < arr.length; j++) {
+     if (arr[j] == '^^') cats += 1;
+   }
+   return cats;
+ }
